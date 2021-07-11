@@ -33,7 +33,6 @@ RUN apt update && apt upgrade -y && apt install --no-install-recommends -y \
         libxslt1-dev \
         openssl \
         pv \
-        jq \
         wget \
         python3-dev \
         libreadline-dev \
