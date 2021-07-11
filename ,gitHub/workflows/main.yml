@@ -1,0 +1,21 @@
+name: hnji
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@master
+        with:
+          find: "from .sql"
+          replace: "from LIONX.sql"
+      - name: Pull All Updates
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: 'there was a conflict'
+          commit_options: '--no-verify'
+          repository: .
+          commit_user_name: MdNoor786
+          commit_user_email: teamlionx786@gmail.com
+          commit_author: MdNoor786 <teamlionx786@gmail.com>
